@@ -2,7 +2,7 @@
 package Classes;
 import Enums.PaymentMethods;
 import java.time.LocalDate;
-public class HourlyEmployee extends Employee
+final public class HourlyEmployee extends Employee
 {
     private int hourlyRate;
 

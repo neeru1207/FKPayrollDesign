@@ -1,9 +1,8 @@
 // Test with Tests/TestSalariedEmployee
 package Classes;
 import Enums.PaymentMethods;
-
 import java.time.LocalDate;
-public class SalariedEmployee extends Employee
+final public class SalariedEmployee extends Employee
 {
     private int salary;
     private final boolean canReceiveCommissions;

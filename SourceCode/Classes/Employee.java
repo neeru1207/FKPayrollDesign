@@ -56,37 +56,37 @@ public class Employee
     }
 
     // A function to get the employee ID
-    public int getEmpId()
+    final public int getEmpId()
     {
         return this.empId;
     }
 
     // A function to get the employee name
-    public String getEmpName()
+    final public String getEmpName()
     {
         return this.empName;
     }
 
     // A function to check if the employee belongs to the employee union
-    public boolean belongsToUnion()
+    final public boolean belongsToUnion()
     {
         return this.belongsToUnion;
     }
 
     // A function to change the chosen payment method
-    public void changeChosenPaymentMethod(PaymentMethods meth)
+    final public void changeChosenPaymentMethod(PaymentMethods meth)
     {
         this.chosenPaymentMethod = meth;
     }
 
     // A function to get the Union Dues Rate
-    public float getUnionDuesRate()
+    final public float getUnionDuesRate()
     {
         return this.unionDuesRate;
     }
 
     // A function to change the Union Dues Rate
-    public void setUnionDuesRate(float unionDuesRate)
+    final public void setUnionDuesRate(float unionDuesRate)
     {
         if (unionDuesRate == 0 || this.unionDuesRate == 0) return;
         this.unionDuesRate = unionDuesRate;
