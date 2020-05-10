@@ -6,10 +6,10 @@ public class SalesReceipt
 {
     private final SalariedEmployee emp;
     private final LocalDate date;
-    private final int sales;
+    private final float sales;
 
     // Constructors
-    public SalesReceipt(SalariedEmployee emp, int sales, LocalDate date) throws Exception
+    public SalesReceipt(SalariedEmployee emp, float sales, LocalDate date) throws Exception
     {
         if (!emp.canReceiveCommissions()) throw new Exception("ERROR! This employee cannot receive commissions!");
         if (sales < 0)throw new Exception("ERROR! The sales cannot be negative!");
@@ -19,13 +19,13 @@ public class SalesReceipt
     }
 
     // Without date
-    public SalesReceipt(SalariedEmployee emp, int sales) throws Exception
+    public SalesReceipt(SalariedEmployee emp, float sales) throws Exception
     {
         this(emp, sales, LocalDate.now());
     }
 
     // A function to get the sales
-    public final int getSales()
+    public final float getSales()
     {
         return this.sales;
     }
