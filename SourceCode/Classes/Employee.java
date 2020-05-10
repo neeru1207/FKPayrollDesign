@@ -12,7 +12,7 @@ public class Employee
     final boolean belongsToUnion;
     static int presEmpId = 1;
     public float unionDuesRate = 0;
-    public float serviceChargeRate = 0;
+    public float serviceCharge = 0;
     public PaymentMethods chosenPaymentMethod;
 
     // CONSTRUCTORS
@@ -103,15 +103,15 @@ public class Employee
     }
 
     // A function to set the union service charges rate
-    final public void setServiceChargeRate(float serviceChargeRate)throws Exception
+    final public void setServiceCharge(float serviceCharge)throws Exception
     {
-        if (serviceChargeRate < 0)throw new Exception("Service charge rate cannot be negative!");
-        this.serviceChargeRate = serviceChargeRate;
+        if (serviceCharge < 0)throw new Exception("Service charge rate cannot be negative!");
+        this.serviceCharge = serviceCharge;
     }
 
-    final public float getServiceChargeRate()
+    final public float getServiceCharge()
     {
-        return this.serviceChargeRate;
+        return this.serviceCharge;
     }
 
     // A function to display the details of the employee

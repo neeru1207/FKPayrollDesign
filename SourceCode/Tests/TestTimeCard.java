@@ -12,9 +12,9 @@ public class TestTimeCard
         // Valid cases
         TimeCard card1 = new TimeCard(emp, 9);
         TimeCard card2 = new TimeCard(emp, 6);
-        // Invalid case
         System.out.println("Card 1 payment: "+ card1.getPayment());
         System.out.println("Card 2 payment: "+ card2.getPayment());
+        // Invalid case
         try
         {
             TimeCard card3 = new TimeCard(emp, -4);

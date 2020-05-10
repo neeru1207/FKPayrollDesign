@@ -22,7 +22,11 @@ final public class SalariedEmployee extends Employee
             throw new Exception("ERROR! The hourly rate cannot be zero!");
         }
         if (commissionRate < 0) throw new Exception("ERROR! The Commission rate cannot be negative!");
-        if (commissionRate != 0)this.canReceiveCommissions = true;
+        if (commissionRate != 0)
+        {
+            this.canReceiveCommissions = true;
+            this.commissionRate = commissionRate;
+        }
         else this.canReceiveCommissions = false;
         this.salary = salary;
     }
@@ -42,15 +46,31 @@ final public class SalariedEmployee extends Employee
         this(empName, meth, salary, LocalDate.now(), 0, commissionRate);
     }
 
+    // A function to change the salary
     public void changeSalary(int salary) throws Exception
     {
         if (salary==0) throw new Exception("ERROR! The salary cannot be zero!");
         this.salary = salary;
     }
+    // A function to get the salary
     public int getSalary()
     {
         return this.salary;
     }
+
+    // A function to return the commission rate
+    public float getCommissionRate()
+    {
+        return this.commissionRate;
+    }
+
+    // A function to check if the employee can receive commissions
+    public boolean canReceiveCommissions()
+    {
+        return this.canReceiveCommissions;
+    }
+
+    // A function to display the details of the employees
     @Override
     public void displayDetails()
     {
