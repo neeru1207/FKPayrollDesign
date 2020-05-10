@@ -25,19 +25,19 @@ public class SalesReceipt
     }
 
     // A function to get the sales
-    public int getSales()
+    public final int getSales()
     {
         return this.sales;
     }
 
     // A function to get the date
-    public LocalDate getDate()
+    public final LocalDate getDate()
     {
         return this.date;
     }
 
     // A function to get the payment
-    public float getPayment()
+    public final float getPayment()
     {
         return this.sales * this.emp.getCommissionRate();
     }

@@ -42,14 +42,14 @@ final public class HourlyEmployee extends Employee
     }
 
     // Function to set the hourly rate.
-    public void setHourlyRate(float rate) throws Exception
+    public final void setHourlyRate(float rate) throws Exception
     {
         if (rate==0) throw new Exception("ERROR! The hourly rate cannot be zero!");
         this.hourlyRate = rate;
     }
 
     // Function to get the hourly rate.
-    public float getHourlyRate()
+    public final float getHourlyRate()
     {
         return this.hourlyRate;
     }

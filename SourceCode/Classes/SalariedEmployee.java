@@ -47,25 +47,25 @@ final public class SalariedEmployee extends Employee
     }
 
     // A function to change the salary
-    public void changeSalary(int salary) throws Exception
+    public final void changeSalary(int salary) throws Exception
     {
         if (salary==0) throw new Exception("ERROR! The salary cannot be zero!");
         this.salary = salary;
     }
     // A function to get the salary
-    public int getSalary()
+    public final int getSalary()
     {
         return this.salary;
     }
 
     // A function to return the commission rate
-    public float getCommissionRate()
+    public final float getCommissionRate()
     {
         return this.commissionRate;
     }
 
     // A function to check if the employee can receive commissions
-    public boolean canReceiveCommissions()
+    public final boolean canReceiveCommissions()
     {
         return this.canReceiveCommissions;
     }
