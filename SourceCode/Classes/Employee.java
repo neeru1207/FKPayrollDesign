@@ -10,6 +10,7 @@ public class Employee
     final boolean belongsToUnion;
     static int presEmpId = 1;
     public float unionDuesRate = 0;
+    public float serviceChargeRate = 0;
     public PaymentMethods chosenPaymentMethod;
 
     // CONSTRUCTORS
@@ -90,6 +91,24 @@ public class Employee
     {
         if (unionDuesRate == 0 || this.unionDuesRate == 0) return;
         this.unionDuesRate = unionDuesRate;
+    }
+
+    // A function to get the joining date
+    final public LocalDate getJoiningDate()
+    {
+        return this.joiningDate;
+    }
+
+    // A function to set the union service charges rate
+    final public void setServiceChargeRate(float serviceChargeRate)throws Exception
+    {
+        if (serviceChargeRate < 0)throw new Exception("Service charge rate cannot be negative!");
+        this.serviceChargeRate = serviceChargeRate;
+    }
+
+    final public float getServiceChargeRate()
+    {
+        return this.serviceChargeRate;
     }
 
     // A function to display the details of the employee
