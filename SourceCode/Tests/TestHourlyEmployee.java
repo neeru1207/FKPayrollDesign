@@ -16,7 +16,7 @@ class TestHourlyEmployee
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         System.out.println("*****Test 2*****");
         try
@@ -25,7 +25,7 @@ class TestHourlyEmployee
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         // Valid cases
         System.out.println("*****Test 3*****");

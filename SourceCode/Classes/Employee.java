@@ -1,7 +1,9 @@
 //Test with ../Tests/TestEmployee
 package Classes;
+
 import Enums.PaymentMethods;
 import java.time.LocalDate;
+
 public class Employee
 {
     final int empId;
@@ -32,6 +34,7 @@ public class Employee
         this.joiningDate = joiningDate;
         this.empId = Employee.presEmpId;
         this.chosenPaymentMethod = meth;
+        if (unionrate < 0) throw new Exception("ERROR! The Employee Union Due Rate cannot be negative!");
         if (unionrate != 0) this.belongsToUnion = true;
         else this.belongsToUnion = false;
         this.unionDuesRate = unionrate;

@@ -1,7 +1,9 @@
 // Test with Tests/TestSalariedEmployee
 package Classes;
+
 import Enums.PaymentMethods;
 import java.time.LocalDate;
+
 final public class SalariedEmployee extends Employee
 {
     private int salary;
@@ -19,6 +21,7 @@ final public class SalariedEmployee extends Employee
         {
             throw new Exception("ERROR! The hourly rate cannot be zero!");
         }
+        if (commissionRate < 0) throw new Exception("ERROR! The Commission rate cannot be negative!");
         if (commissionRate != 0)this.canReceiveCommissions = true;
         else this.canReceiveCommissions = false;
         this.salary = salary;

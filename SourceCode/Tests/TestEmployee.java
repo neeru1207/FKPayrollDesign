@@ -15,7 +15,7 @@ class TestEmployee
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         // Valid cases
         System.out.println("*****Test 2*****");
