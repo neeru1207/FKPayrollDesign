@@ -7,13 +7,22 @@ import java.time.LocalDate;
 final public class HourlyEmployee extends Employee
 {
     private float hourlyRate;
-
+    private float totalWages;
     // CONSTRUCTORS
-    // @CompulsoryParams : Employee Name, Payment method, Hourly Rate
-    // @DefaultParams : Union Rate = 0, Joining date = Present date
 
-    // Add to Employee Union and custom joining date Constructor.
-    public HourlyEmployee (String empName, PaymentMethods meth, float hourlyRate, LocalDate joiningDate, float unionrate) throws Exception
+    // Constructor when the empId is provided
+    public HourlyEmployee (String empName, int empId, float totalWages, PaymentMethods meth, float hourlyRate, LocalDate joiningDate, float unionrate) throws Exception
+    {
+        super(empName, empId, meth, joiningDate, unionrate);
+        if (hourlyRate <= 0)
+        {
+            throw new Exception("ERROR! The hourly rate cannot be zero or negative!");
+        }
+        this.hourlyRate = hourlyRate;
+        this.totalWages = totalWages;
+    }
+    // Constructor when the empId is NOT provided
+    public HourlyEmployee (String empName, float totalWages, PaymentMethods meth, float hourlyRate, LocalDate joiningDate, float unionrate) throws Exception
     {
         super(empName, meth, joiningDate, unionrate);
         if (hourlyRate <= 0)
@@ -21,24 +30,7 @@ final public class HourlyEmployee extends Employee
             throw new Exception("ERROR! The hourly rate cannot be zero or negative!");
         }
         this.hourlyRate = hourlyRate;
-    }
-
-    // Present joining date and don't add to Employee Union Constructor.
-    public HourlyEmployee (String empName, PaymentMethods meth, float hourlyRate) throws Exception
-    {
-        this(empName, meth, hourlyRate, LocalDate.now());
-    }
-
-    // Custom joining date and don't add to Employee Union Constructor.
-    public HourlyEmployee (String empName, PaymentMethods meth, float hourlyRate, LocalDate joiningDate) throws Exception
-    {
-       this(empName, meth, hourlyRate, joiningDate, 0);
-    }
-
-    // Present joining date and add to Employee Union Constructor
-    public HourlyEmployee (String empName, PaymentMethods meth, float hourlyRate, float unionrate) throws Exception
-    {
-        this(empName, meth, hourlyRate, LocalDate.now(), unionrate);
+        this.totalWages = totalWages;
     }
 
     // Function to set the hourly rate.
@@ -54,11 +46,31 @@ final public class HourlyEmployee extends Employee
         return this.hourlyRate;
     }
 
+    // Function to get the total wages
+    public final float getTotalWages()
+    {
+        return this.totalWages;
+    }
+
+    // Add to total wages to be paid when a time card is used.
+    public void addToTotalWages(float amt) throws Exception
+    {
+        if (amt<0) throw new Exception("ERROR! The added wage cannot be zero!");
+        this.totalWages += amt;
+    }
+
+    // Reset the wages to 0 when the wages are paid on the payment day.
+    public void resetTotalWages()
+    {
+        this.totalWages = 0;
+    }
+
     @Override
     public void displayDetails()
     {
         super.displayDetails();
         System.out.println("Hourly Paid");
         System.out.println("Hourly rate: "+ this.hourlyRate);
+        System.out.println("Total Wages yet to be paid: "+ this.getTotalWages());
     }
 }
