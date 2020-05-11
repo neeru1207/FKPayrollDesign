@@ -1,8 +1,10 @@
 package Classes;
 
+import Interfaces.Payable;
+
 import java.time.LocalDate;
 
-public class TimeCard
+public class TimeCard implements Payable
 {
     private final HourlyEmployee emp;
     private final LocalDate date;
@@ -20,15 +22,15 @@ public class TimeCard
     {
         this(emp, LocalDate.now(), numberOfHours);
     }
-    public LocalDate getDate()
+    public final LocalDate getDate()
     {
         return this.date;
     }
-    public int getNumberOfHours()
+    public final int getNumberOfHours()
     {
         return this.numberOfHours;
     }
-    public float getPayment()
+    public final float getPayment()
     {
         return this.numberOfHours > 8? (float) ((1.5 * (this.numberOfHours - 8) + 8) * this.emp.getHourlyRate()) : (float) (this.numberOfHours * this.emp.getHourlyRate());
     }

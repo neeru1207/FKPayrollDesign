@@ -1,8 +1,10 @@
 package Classes;
 
+import Interfaces.Payable;
+
 import java.time.LocalDate;
 
-public class SalesReceipt
+public class SalesReceipt implements Payable
 {
     private final SalariedEmployee emp;
     private final LocalDate date;
